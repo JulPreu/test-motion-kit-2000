@@ -15,12 +15,12 @@ basic.forever(function () {
         if (Richtung == 1) {
             maqueen.setColor(0xff0000)
             maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 50)
-            maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 50)
+            maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 25)
         } else {
             // Links
             if (Richtung == -1) {
                 maqueen.setColor(0x0000ff)
-                maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 50)
+                maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 25)
                 maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 50)
             }
             maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 200)
@@ -37,14 +37,14 @@ basic.forever(function () {
     if (maqueen.ultrasonic(maqueen.DistanceUnit.Centimeters) < 20) {
         Richtung = 1
     }
-    basic.pause(1000)
+    basic.pause(200)
     // rechts
     maqueen.servoRun(maqueen.Servos.S1, 60)
     basic.pause(200)
     if (maqueen.ultrasonic(maqueen.DistanceUnit.Centimeters) < 20) {
         Richtung = -1
     }
-    basic.pause(1000)
+    basic.pause(200)
     // Geradeaus
     if (maqueen.ultrasonic(maqueen.DistanceUnit.Centimeters) > 20) {
         Richtung = 0
