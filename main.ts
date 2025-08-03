@@ -45,7 +45,7 @@ basic.forever(function () {
         Richtung = -1
     }
     basic.pause(1000)
-    // Geradeaus 
+    // Geradeaus
     if (maqueen.ultrasonic(maqueen.DistanceUnit.Centimeters) > 20) {
         Richtung = 0
     }
